@@ -1,0 +1,46 @@
+{
+  "name": "component",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-react-jsx": "^7.7.4",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "core-js": "3",
+    "sinuous": "^0.18.1",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "config": {
+    "webpack_input": "./src/index.js",
+    "webpack_output": "./dist"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry",
+          "corejs" : { "version" : 3 }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragma": "h",
+          "pragmaFrag": "h"
+        }
+      ]
+    ]
+  },
+  "browserslist": "> 1%, Firefox > 20, IE > 8, Chrome >= 21, Safari >= 6.0",
+  "scripts": {
+    "webpack:watch": "webpack --watch --mode=development",
+    "webpack:build": "webpack --mode=production",
+    "watch": "yarn webpack:watch",
+    "build": "yarn webpack:build"
+  }
+}
