@@ -22,7 +22,9 @@
         "@babel/preset-env",
         {
           "useBuiltIns": "entry",
-          "corejs" : { "version" : 3 }
+          "corejs": {
+            "version": 3
+          }
         }
       ]
     ],
